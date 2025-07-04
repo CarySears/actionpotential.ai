@@ -188,6 +188,10 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             animation: fadeInUp 0.8s ease;
+            background: linear-gradient(180deg, #374151 0%, #1f2937 25%, #2EA6D4 65%, #79C5C7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         @keyframes fadeInUp {
@@ -203,17 +207,12 @@
 
         .tagline {
             font-size: 1.75rem;
-            color: #2EA6D4;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tagline::before {
-            content: '🧠';
-            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2EA6D4 0%, #79C5C7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero .highlight {
@@ -226,7 +225,7 @@
         .hero p {
             font-size: 1.25rem;
             color: #6b7280;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
@@ -1197,7 +1196,9 @@
                     </h1>
                     <p class="tagline">AI with a psychology degree.</p>
                     <p>
-                        Built by a behavioral scientist who understands how humans actually communicate.<br><br>
+                        Built by a behavioral scientist who understands how humans actually communicate.
+                    </p>
+                    <p>
                         Whether you're healing patients or fixing pipes, relationships matter. 
                         Our AI strengthens them while you focus on your craft.
                     </p>
