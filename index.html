@@ -859,6 +859,285 @@
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
         }
 
+        /* Video Testimonials Section Styles */
+        .video-testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f0f9ff 100%);
+            position: relative;
+        }
+
+        .video-testimonials.early-testimonials {
+            padding-top: 60px;
+        }
+
+        .video-testimonials.later-testimonials {
+            background: #f9fafb;
+            padding: 60px 0 80px;
+        }
+
+        .video-testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        }
+
+        .video-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 900px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-testimonial-card {
+            background: white;
+            border-radius: 16px;
+            overflow: visible;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f1f5f9;
+        }
+
+        .video-testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-container {
+            position: relative;
+            cursor: pointer;
+            border-radius: 16px 16px 0 0;
+            overflow: hidden;
+        }
+
+        .video-thumbnail {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+        }
+
+        .video-play-button {
+            z-index: 2;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+        }
+
+        .video-container:hover .video-play-button {
+            transform: scale(1.1);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .video-info {
+            padding: 1.5rem 1.5rem 0;
+        }
+
+        .video-info h4 {
+            font-size: 1.25rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .video-role {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .video-result {
+            color: #2EA6D4;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonial Quote Section */
+        .testimonial-quote {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .quote-preview {
+            font-style: italic;
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .quote-preview::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+            font-size: 2rem;
+            color: #2EA6D4;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #2EA6D4;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .read-more-btn:hover {
+            color: #1B75BB;
+            gap: 0.75rem;
+        }
+
+        .read-more-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .read-more-btn.expanded svg {
+            transform: rotate(180deg);
+        }
+
+        .full-testimonial {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            opacity: 0;
+        }
+
+        .full-testimonial.expanded {
+            max-height: 500px;
+            opacity: 1;
+            transition: max-height 0.5s ease-in, opacity 0.3s ease-in 0.2s;
+        }
+
+        .full-testimonial-content {
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+            margin-top: 1rem;
+        }
+
+        .testimonial-rating {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .full-testimonial-text {
+            color: #374151;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-result-badge {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #065f46;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            border: 1px solid #10b981;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Coming Soon Card */
+        .video-testimonial-card.coming-soon {
+            border: 2px dashed #e5e7eb;
+            background: #fafbfc;
+        }
+
+        .coming-soon-thumbnail {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        }
+
+        .coming-soon-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .coming-soon-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            filter: grayscale(50%);
+        }
+
+        .coming-soon-content p {
+            color: #6b7280;
+            font-weight: 500;
+            margin: 0.25rem 0;
+        }
+
+        .coming-soon-date {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .video-testimonials-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .video-testimonials-cta p {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
         /* Results Section */
         .results {
             padding: 80px 0;
@@ -888,109 +1167,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Enhanced Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: #f9fafb;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial {
-            background: linear-gradient(135deg, #ffffff, #fafbfc);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #f1f5f9;
-        }
-
-        .testimonial::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #FF9A56, #B565A7, #79C5C7, #2EA6D4);
-        }
-
-        .testimonial:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-
-        .testimonial:nth-child(1) .author-avatar {
-            background: linear-gradient(135deg, #2EA6D4, #1B75BB);
-        }
-        
-        .testimonial:nth-child(2) .author-avatar {
-            background: linear-gradient(135deg, #79C5C7, #2EA6D4);
-        }
-        
-        .testimonial:nth-child(3) .author-avatar {
-            background: linear-gradient(135deg, #00A79D, #79C5C7);
-        }
-
-        .testimonial-rating {
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .author-info h4 {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info p {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .result-badge {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            color: #065f46;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            display: inline-block;
-            border: 1px solid #10b981;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-        }
-
         /* Enhanced Buttons and CTAs */
         .btn-primary {
             background: linear-gradient(135deg, #FF9A56, #B565A7);
@@ -1004,6 +1180,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(255, 154, 86, 0.3);
+            display: inline-block;
         }
 
         .btn-primary::before {
@@ -1039,6 +1216,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: inline-block;
         }
 
         .btn-secondary:hover {
@@ -1148,8 +1326,22 @@
             .trust-grid,
             .services-grid,
             .psychology-grid,
-            .results-grid {
+            .results-grid,
+            .testimonials-grid-2 {
                 grid-template-columns: 1fr;
+            }
+
+            .video-testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .video-thumbnail {
+                height: 180px;
+            }
+
+            .full-testimonial.expanded {
+                max-height: 800px;
             }
 
             .mobile-floating-bar {
@@ -1169,8 +1361,8 @@
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#demo">Try It</a></li>
+                    <li><a href="#early-testimonials">Success Stories</a></li>
                     <li><a href="#results">Results</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="header-actions">
@@ -1264,6 +1456,103 @@
                         <div class="trust-icon">✅</div>
                         <h4>No Robots, No Nonsense</h4>
                         <p>Natural conversation. Never sounds scripted. Never goes off-script.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Video Testimonials Section (Build Trust Before Pricing) -->
+    <section class="video-testimonials early-testimonials" id="early-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ See It In Action</div>
+                <h2>Don't Just Take <span class="highlight">Our Word</span> For It</h2>
+                <p>Watch how we've already transformed practices like yours</p>
+            </div>
+            
+            <div class="video-testimonials-grid testimonials-grid-2">
+                <!-- Video 1 -->
+                <div class="video-testimonial-card">
+                    <div class="video-container" data-video-id="1">
+                        <div class="video-thumbnail">
+                            <div class="video-play-button">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <circle cx="30" cy="30" r="30" fill="white" fill-opacity="0.9"/>
+                                    <path d="M24 20L40 30L24 40V20Z" fill="#2EA6D4"/>
+                                </svg>
+                            </div>
+                            <div class="video-duration">2:34</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Dr. Sarah Williams</h4>
+                        <p class="video-role">Psychiatrist • Private Practice</p>
+                        <p class="video-result">📈 89% reduction in no-shows</p>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p class="quote-preview">
+                            I was terrified AI would damage patient relationships. Instead, they compliment how caring our 'receptionist' is...
+                        </p>
+                        <button class="read-more-btn" data-testimonial="1">
+                            Read Full Story
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 12L12 8L8 4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="full-testimonial" id="testimonial-1">
+                            <div class="full-testimonial-content">
+                                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                                <p class="full-testimonial-text">
+                                    "I was terrified AI would damage patient relationships. Instead, they compliment how caring our 'receptionist' is. The HIPAA-compliant AI system they built for us has been revolutionary. Not only did it reduce our no-show rates by 89%, but it also handles crisis calls with remarkable sensitivity. The behavioral science approach they use truly understands patient psychology. 
+                                    <br><br>
+                                    What impressed me most was how they customized the AI to recognize mental health emergencies and respond appropriately. It's like having a receptionist who's also trained in crisis intervention. My patients feel heard and supported from their very first interaction with our practice."
+                                </p>
+                                <div class="testimonial-result-badge">✅ Result: 89% reduction in no-shows + Improved crisis response</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-testimonial-card">
+                    <div class="video-container" data-video-id="2">
+                        <div class="video-thumbnail">
+                            <div class="video-play-button">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <circle cx="30" cy="30" r="30" fill="white" fill-opacity="0.9"/>
+                                    <path d="M24 20L40 30L24 40V20Z" fill="#2EA6D4"/>
+                                </svg>
+                            </div>
+                            <div class="video-duration">3:12</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Balance Mental Health</h4>
+                        <p class="video-role">Group Practice • 12 Providers</p>
+                        <p class="video-result">📈 67 five-star reviews in 90 days</p>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p class="quote-preview">
+                            We went from invisible to the highest-rated practice in town. The way they automated our review process feels so natural...
+                        </p>
+                        <button class="read-more-btn" data-testimonial="2">
+                            Read Full Story
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 12L12 8L8 4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="full-testimonial" id="testimonial-2">
+                            <div class="full-testimonial-content">
+                                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                                <p class="full-testimonial-text">
+                                    "We went from invisible to the highest-rated practice in town. 67 authentic reviews from real patients in just 90 days. The way they automated our review process feels so natural - patients actually want to leave reviews because the AI catches them at the perfect moment after a great session.
+                                    <br><br>
+                                    Beyond the reviews, our entire patient communication transformed. The AI handles scheduling, reminders, and follow-ups with such warmth that patients often mention how 'caring' our staff is. We've had to hire two new therapists just to handle the influx of new patients finding us through our improved online presence."
+                                </p>
+                                <div class="testimonial-result-badge">✅ Result: 67 five-star reviews + 40% increase in new patients</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1401,6 +1690,84 @@
         </div>
     </section>
 
+    <!-- Later Video Testimonials Section (Overcome Pricing Objections) -->
+    <section class="video-testimonials later-testimonials" id="more-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🚀 More Success Stories</div>
+                <h2>Join <span class="highlight">Forward-Thinking Practices</span> Already Growing</h2>
+                <p>See how businesses at every level are scaling with psychology-driven AI</p>
+            </div>
+            
+            <div class="video-testimonials-grid testimonials-grid-2">
+                <!-- Video 3 -->
+                <div class="video-testimonial-card">
+                    <div class="video-container" data-video-id="3">
+                        <div class="video-thumbnail">
+                            <div class="video-play-button">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <circle cx="30" cy="30" r="30" fill="white" fill-opacity="0.9"/>
+                                    <path d="M24 20L40 30L24 40V20Z" fill="#2EA6D4"/>
+                                </svg>
+                            </div>
+                            <div class="video-duration">1:58</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Transform Coaching Academy</h4>
+                        <p class="video-role">Executive Coaching</p>
+                        <p class="video-result">📈 4x increase in qualified leads</p>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p class="quote-preview">
+                            I wanted to transform more lives without burning out. Now perfectly-matched students find us automatically...
+                        </p>
+                        <button class="read-more-btn" data-testimonial="3">
+                            Read Full Story
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 12L12 8L8 4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="full-testimonial" id="testimonial-3">
+                            <div class="full-testimonial-content">
+                                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                                <p class="full-testimonial-text">
+                                    "I wanted to transform more lives without burning out. Now perfectly-matched students find us automatically. Their behavioral science approach to our marketing means we attract executives who are ready for deep transformation work, not just surface-level coaching.
+                                    <br><br>
+                                    The AI nurturing sequence they built is incredible - it shares client success stories, addresses common fears about coaching, and builds trust over weeks. By the time prospects book a call, they're already sold on working with us. Our close rate went from 20% to 75%, and I'm working with clients who truly value the transformation process."
+                                </p>
+                                <div class="testimonial-result-badge">✅ Result: 4x qualified leads + 75% close rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 - Coming Soon -->
+                <div class="video-testimonial-card coming-soon">
+                    <div class="video-container">
+                        <div class="video-thumbnail coming-soon-thumbnail">
+                            <div class="coming-soon-content">
+                                <span class="coming-soon-icon">🎬</span>
+                                <p>New Success Story</p>
+                                <p class="coming-soon-date">Coming January 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Your Practice Here?</h4>
+                        <p class="video-role">Join our success stories</p>
+                        <p class="video-result">📞 <a href="tel:555-123-4567" style="color: #2EA6D4;">Call 555-123-4567</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-testimonials-cta">
+                <p>Ready to create your own success story?</p>
+                <a href="#contact" class="btn-primary">Start Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Psychology Foundation -->
     <section class="psychology">
         <div class="container">
@@ -1509,64 +1876,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="case-studies" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">⭐ Client Success Stories</div>
-                <h2>Real Results from <span class="highlight">Real Businesses</span></h2>
-                <p>See how businesses across industries are transforming their marketing with our behavioral science and AI solutions.</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
-                    <div class="testimonial-text">
-                        "The HIPAA-compliant AI system they built for us has been revolutionary. Not only did it reduce our no-show rates by 89%, but it also handles crisis calls with remarkable sensitivity. The behavioral science approach they use truly understands patient psychology."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DR</div>
-                        <div class="author-info">
-                            <h4>Dr. Michael Rodriguez</h4>
-                            <p>Psychiatrist<br>Behavioral Health Associates</p>
-                        </div>
-                    </div>
-                    <div class="result-badge">✅ Result: 89% reduction in no-shows</div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
-                    <div class="testimonial-text">
-                        "ActionPotential.AI transformed our marketing completely. Their behavioral science approach combined with AI automation increased our course enrollment rates by 239% in just 60 days. Students often comment on how personalized the experience feels."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <p>Director of Marketing<br>Tech Academy</p>
-                        </div>
-                    </div>
-                    <div class="result-badge">✅ Result: 239% conversion increase</div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
-                    <div class="testimonial-text">
-                        "Working with this team has been incredible. They bring so much positive energy and truly understand the psychology of luxury travel decisions. Our booking rate increased by 172% and our average order value went up by 52%!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">CB</div>
-                        <div class="author-info">
-                            <h4>Christina Breza</h4>
-                            <p>CEO<br>Vespa Tours Italia</p>
-                        </div>
-                    </div>
-                    <div class="result-badge">✅ Result: 172% booking increase</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer CTA -->
     <section class="footer-cta">
         <div class="container">
@@ -1615,7 +1924,7 @@
                 <div class="footer-section">
                     <h3>Company</h3>
                     <a href="#about">About</a>
-                    <a href="#case-studies">Case Studies</a>
+                    <a href="#early-testimonials">Success Stories</a>
                     <a href="#blog">Blog</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
@@ -1654,6 +1963,84 @@
                 alert('Video demo would play here');
             }
         });
+
+        // Video Testimonials Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to video testimonials
+            const videoContainers = document.querySelectorAll('.video-container[data-video-id]');
+            
+            videoContainers.forEach(container => {
+                container.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video-id');
+                    
+                    // Here you would implement your video player logic
+                    // For example, open a modal with the video or redirect to video page
+                    alert(`Video ${videoId} would play here. Integrate with your video platform (YouTube, Vimeo, Wistia, etc.)`);
+                    
+                    // Example implementation with a modal:
+                    // openVideoModal(videoId);
+                });
+            });
+            
+            // Read More functionality for testimonials
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const testimonialId = this.getAttribute('data-testimonial');
+                    const fullTestimonial = document.getElementById(`testimonial-${testimonialId}`);
+                    const isExpanded = this.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        fullTestimonial.classList.remove('expanded');
+                        this.classList.remove('expanded');
+                        this.innerHTML = `
+                            Read Full Story
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 12L12 8L8 4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        `;
+                    } else {
+                        // Expand
+                        fullTestimonial.classList.add('expanded');
+                        this.classList.add('expanded');
+                        this.innerHTML = `
+                            Show Less
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 12L12 8L8 4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        `;
+                    }
+                });
+            });
+        });
+
+        // Example function to open video in modal (implement based on your needs)
+        function openVideoModal(videoId) {
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'video-modal';
+            modal.innerHTML = `
+                <div class="video-modal-content">
+                    <span class="video-modal-close">&times;</span>
+                    <iframe src="YOUR_VIDEO_URL_${videoId}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal functionality
+            modal.querySelector('.video-modal-close').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
     </script>
 </body>
 </html>
