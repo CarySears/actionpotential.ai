@@ -154,12 +154,12 @@
 
         /* Enhanced Hero Content */
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            justify-content: center;
             align-items: center;
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .hero-text {
@@ -371,6 +371,58 @@
             margin-top: 1rem;
             font-size: 0.875rem;
             color: #888;
+        }
+
+        /* Virtual Front Desk Section */
+        .virtual-front-desk {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #fef7ed 25%, #f0f9ff 75%, #e0f2fe 100%);
+            position: relative;
+        }
+
+        .virtual-front-desk .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .virtual-front-desk .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2EA6D4 0%, #1B75BB 50%, #79C5C7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .virtual-front-desk .section-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quiz-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .quiz-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .quiz-content .quiz-header h3 {
+            font-size: 1.75rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
 
         /* Trust Section */
@@ -1403,10 +1455,22 @@
                     </p>
                 </div>
                 
-                <!-- Interactive Quiz (Replaces Dashboard) -->
-                <div class="hero-quiz">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Virtual Front Desk Section -->
+    <section class="virtual-front-desk">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your <span class="highlight">Virtual Front Desk</span></h2>
+                <p>Discover how AI can transform your business communications</p>
+            </div>
+            <div class="quiz-container">
+                <div class="quiz-content">
                     <div class="quiz-header">
-                        <h2>Discover Your <span class="highlight">AI Psychology Score</span></h2>
+                        <h3>Discover Your <span class="highlight">AI Psychology Score</span></h3>
                         <div class="quiz-timer">
                             <span>⏱️</span>
                             <span>Takes just 3 minutes</span>
